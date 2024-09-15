@@ -1,0 +1,523 @@
+<!doctype html>
+
+<html class="no-js" lang="en-US">
+
+<head id="Benkatsman" data-template-set="benkatsman">
+	<meta charset="UTF-8">
+	
+    <title>Ben Katsman</title>
+
+	<meta name="title" content="virgilabloh">
+	<meta name="description" content="" />
+    <meta name="Copyright" content="Ben Katsman">
+    <link rel="shortcut icon" type="image/png" href="b.ico"/>
+
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+	
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+</head>
+<style>
+    html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-weight: normal;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+article, aside, figure, footer, header, nav, section, details, summary {display: block;}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+
+/* Responsive images and other embedded objects
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+   If this default setting for images is causing issues, you might want to replace it with a .responsive class instead. */
+img,
+object,
+embed {max-width: 100%;}
+
+/* force a vertical scrollbar to prevent a jumpy page */
+html {overflow-y: scroll;}
+
+/* we use a lot of ULs that aren't bulleted.
+	don't forget to restore the bullets within content. */
+ul {list-style: none;}
+
+blockquote, q {quotes: none;}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {content: ''; content: none;}
+
+a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+
+del {text-decoration: line-through;}
+
+abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
+
+/* tables still need cellspacing="0" in the markup */
+table {border-collapse: collapse; border-spacing: 0;}
+th {font-weight: bold; vertical-align: bottom;}
+td {font-weight: normal; vertical-align: top;}
+
+hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+
+input, select {vertical-align: middle;}
+
+pre {
+    white-space: pre; /* CSS2 */
+    white-space: pre-wrap; /* CSS 2.1 */
+    white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word; /* IE */
+}
+
+input[type="radio"] {vertical-align: text-bottom;}
+input[type="checkbox"] {vertical-align: bottom;}
+.ie7 input[type="checkbox"] {vertical-align: baseline;}
+.ie6 input {vertical-align: text-bottom;}
+
+select, input, textarea {font: 99% sans-serif;}
+
+table {font-size: inherit; font: 100%;}
+
+small {font-size: 85%;}
+
+strong {font-weight: bold;}
+
+td, td img {vertical-align: top;}
+
+/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+sub, sup {font-size: 75%; line-height: 0; position: relative;}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {font-family: monospace, sans-serif;}
+
+/* hand cursor on clickable elements */
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
+button {cursor: pointer;}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {margin: 0;}
+
+/* make buttons play nice in IE */
+button,
+input[type=button] {width: auto; overflow: visible;}
+
+/* scale images in IE7 more attractively */
+.ie7 img {-ms-interpolation-mode: bicubic;}
+
+/* prevent BG image flicker upon hover
+   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+*/
+
+/* let's clear some floats */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+:root {
+    --size-1: 1vw;
+}
+html{
+    overflow: auto;
+}
+body {
+    font-family: sans-serif;
+    font-size: var(--size-1);
+    line-height: 1em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+body, select, input, textarea {
+    color: #000;
+}
+
+a {color: #000; text-decoration: none;}
+a:hover {color: #000;}
+
+/* Custom text-selection colors (remove any text shadows: http://twitter.com/miketaylr/status/12228805301) */
+::-moz-selection{background: #000; color: #fff; text-shadow: none;}
+::selection {background: #000; color: #fff; text-shadow: none;}
+
+/*	j.mp/webkit-tap-highlight-color */
+a:link {-webkit-tap-highlight-color: #000; color: #000;}
+
+ins {background-color: #fff; color: #000; text-decoration: none;}
+mark {background-color: #fff; color: #000; font-style: italic; font-weight: bold;}
+
+/* Mozilla dosen't style place holders by default */
+input:-moz-placeholder { color:#a9a9a9; }
+textarea:-moz-placeholder { color:#a9a9a9; }
+
+.clearafter:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.text-right { text-align: right; }
+
+.black { filter: grayscale(1); }
+
+/*
+-------------------------------------------------------------------------------*/
+
+.wrapper-logos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.wrapper-logos .single-logo {
+    width: 20%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+.grayed {
+    opacity: 0.3;
+}
+
+
+    
+/*
+-------------------------------------------------------------------------------*/
+
+
+
+.col-md-1{
+    width: 8.33%;
+    float: left;
+}
+.col-md-2{
+    width: 16.66%;
+    float: left;
+}
+.col-md-3{
+    width: 25%;
+    float: left;
+}
+.col-md-4{
+    width: 33.33%;
+    float: left;
+}
+.col-md-5{
+    width: 41.66%;
+    float: left;
+}
+.col-md-6{
+    width: 50%;
+    float: left;
+}
+.col-md-7{
+    width: 58.33%;
+    float: left;
+}
+.col-md-8{
+    width: 66.66%;
+    float: left;
+}
+.col-md-9{
+    width: 75%;
+    float: left;
+}
+.col-md-10{
+    width: 83.33%;
+    float: left;
+}
+.col-md-11{
+    width: 91.66%;
+    float: left;
+}
+.col-md-12{
+    width: 100%;
+    float: left;
+}
+
+.mobile{display: none;}
+
+
+
+
+@media screen and (max-width: 960px) {
+    
+    .desktop{display: none;}
+	.mobile{display: block;}
+    
+    
+    .wrapper-logos .single-logo {
+        width: 50%;
+    }
+
+
+
+    /******************************/
+    .col-sm-50{
+        width: 50%;
+        float: left;
+    }
+    .col-sm-100{
+        width: 100%;
+        float: left;
+    }
+        
+}
+
+body {
+  background: #ecf0f1;
+  color: #000;
+  font-family: HelveticaNeue, 'Helvetica Neue', 'Lucida Grande', Arial, sans-serif;
+}
+
+/* window BEGIN */
+
+a {
+  text-decoration: none;
+}
+
+span {
+  line-height: 9px;
+  vertical-align: 50%;
+}
+
+.window {
+  background: #fff;
+  width: 50vw;
+  height:13vh;
+  margin: auto;
+  margin-top: 12.5vh;
+  border: 1px solid #acacac;
+  border-radius: 6px;
+  box-shadow: 0px 0px 20px #acacac;
+}
+
+.titlebar {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #ebebeb, color-stop(1.0, #d5d5d5)));
+  background: -webkit-linear-gradient(top, #ebebeb, #d5d5d5);
+  background: -moz-linear-gradient(top, #ebebeb, #d5d5d5);
+  background: -ms-linear-gradient(top, #ebebeb, #d5d5d5);
+  background: -o-linear-gradient(top, #ebebeb, #d5d5d5);
+  background: linear-gradient(top, #ebebeb, #d5d5d5);
+  color: #4d494d;
+  font-size: 11pt;
+  line-height: 20px;
+  text-align: center;
+  width: 100%;
+  height: 20px;
+  border-top: 1px solid #f3f1f3;
+  border-bottom: 1px solid #b1aeb1;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  cursor: default;
+}
+
+.buttons {
+  padding-left: 8px;
+  padding-top: 3px;
+  float: left;
+  line-height: 0px;
+}
+
+.buttons:hover a {
+  visibility: visible;
+}
+
+.close {
+  background: #ff5c5c;
+  font-size: 9pt;
+  width: 11px;
+  height: 11px;
+  border: 1px solid #e33e41;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.close:active {
+  background: #c14645;
+  border: 1px solid #b03537;
+}
+
+.close:active .closebutton {
+  color: #4e0002;
+}
+
+.closebutton {
+  color: #820005;
+  visibility: hidden;
+  cursor: default;
+}
+
+.minimize {
+  background: #ffbd4c;
+  font-size: 9pt;
+  line-height: 11px;
+  margin-left: 4px;
+  width: 11px;
+  height: 11px;
+  border: 1px solid #e09e3e;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.minimize:active {
+  background: #c08e38;
+  border: 1px solid #af7c33;
+}
+
+.minimize:active .minimizebutton {
+  color: #5a2607;
+}
+
+.minimizebutton {
+  color: #9a5518;
+  visibility: hidden;
+  cursor: default;
+}
+
+.zoom {
+  background: #00ca56;
+  font-size: 9pt;
+  line-height: 11px;
+  margin-left: 6px;
+  width: 11px;
+  height: 11px;
+  border: 1px solid #14ae46;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.zoom:active {
+  background: #029740;
+  border: 1px solid #128435;
+}
+
+.zoom:active .zoombutton {
+  color: #003107;
+}
+
+.zoombutton {
+  color: #006519;
+  visibility: hidden;
+  cursor: default;
+}
+
+.content {
+  padding: 10px;
+}
+
+/* window END */
+
+/* content BEGIN */
+
+h3 {
+  margin-top: 0px;
+}
+
+</style>
+<body class="home">
+    
+    <script>
+
+
+    </script>
+    
+    <div class="wrapper-logos">
+        <div class="single-logo">
+            <a href="DJ Katsman.html" target="_blank" class="grayed" ><img class="black" src="DJK (1).png"></a>
+        </div>
+        <div class="single-logo">
+            <a href="xmb-on-web-main/index.html" target="_blank"><img class="black" src="BS3.png"></a>
+        </div>
+        <div class="single-logo">
+            <a href="about.html" target="_blank"><img class="black" src="AB.png"></a>
+        </div>
+        <div class="single-logo">
+            <a href="TIMELINE.html" target="_blank"><img class="black" src="TL.png"></a>
+        </div>
+        <div class="single-logo">
+            <a onclick="alert('Maybe coming soon')" target="_blank"><img class="black" src="images-removebg-preview.png"></a>
+        </div>
+        <div class="single-logo">
+            <a  target="_blank" ><img class="black" src="CS.png"></a>
+        </div>
+        <div class="single-logo">
+            <a onclick="alert('Maybe coming soon')" target="_blank"><img class="black" src="N.png"></a>
+        </div>
+        <div class="single-logo">
+            <a href="https://www.instagram.com/@benjaminkatsman/" target="_blank" ><img class="black" src="BSi.png"></a>
+        </div>
+        <div class="single-logo">
+            <a href="projects.html" target="_blank"><img class="black" src="P.png"></a>
+        </div>
+        <div class="single-logo">
+            <a href="Gallery.html" target="_blank"><img class="black" src="G.png"></a>
+        </div>
+     
+        <div class="window">
+            <div class="titlebar">
+              <div class="buttons">
+                <div class="close">
+                  <a class="closebutton" href="#"><span><strong>x</strong></span></a>
+                  <!-- close button link -->
+                </div>
+                <div class="minimize">
+                  <a class="minimizebutton" href="#"><span><strong>&ndash;</strong></span></a>
+                  <!-- minimize button link -->
+                </div>
+                <div class="zoom">
+                  <a class="zoombutton" href="#"><span><strong>+</strong></span></a>
+                  <!-- zoom button link -->
+                </div>
+              </div>
+              Music_player.dmg
+              <!-- window title -->
+            </div>
+            <div class="content">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2fTiqs2J94CAolYQkCUzk9?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            </div>
+          </div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
